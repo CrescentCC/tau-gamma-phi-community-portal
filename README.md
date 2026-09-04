@@ -14,7 +14,8 @@ The Tau Gamma Phi Community Portal aims to provide a centralized and reliable pl
 
 ## Team Members
 
-| Project Manager | [Name] |
-| Frontend Developer | [Name] |
-| UI/UX Designer | [Name] |
-| Frontend Developer | [Name] |
+| Project Manager [Khelip Abrera] |
+| Ralph Buzar |
+| Mark Daryll Lozano |
+| Gene Cruz |
+| James Bryan Serrano |
