@@ -19,3 +19,7 @@ The Tau Gamma Phi Community Portal aims to provide a centralized and reliable pl
 | Mark Daryll Lozano |
 | Gene Cruz |
 | James Bryan Serrano |
+
+## Admin Demo Account
+Username: admin
+Password: admin123
