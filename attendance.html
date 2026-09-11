@@ -53,15 +53,51 @@
     </nav>
   </header>
 
-  <section class="coming-soon">
-    <h2 class="coming-soon-title">Attendance</h2>
-    <p class="coming-soon-text">This page is part of the next phase.</p>
+  <section class="attendance-page">
+    <h1 class="attendance-heading">EVENT ATTENDANCE</h1>
+
+    <div class="attendance-card">
+      <div class="select-wrapper">
+        <select class="event-select" id="eventSelect">
+          <option value="" selected disabled>-- Select Event --</option>
+          <option value="outreach">Community Outreach Program - Sept 26, 2026</option>
+          <option value="assembly">General Assembly</option>
+          <option value="seminar">Leadership Seminar</option>
+        </select>
+      </div>
+
+      <button type="button" class="time-btn time-in-btn" id="timeInBtn">Time-In</button>
+      <button type="button" class="time-btn time-out-btn" id="timeOutBtn">Time-Out</button>
+    </div>
   </section>
+
+  <div class="face-modal" id="faceModal" hidden>
+    <div class="face-modal-content">
+      <p class="face-modal-title" id="faceModalTitle">Face Verification</p>
+
+      <div class="face-video-wrap">
+        <video id="faceVideo" autoplay muted playsinline></video>
+        <canvas id="faceCanvas"></canvas>
+        <img id="capturedPhoto" class="captured-photo" alt="Captured photo" hidden>
+      </div>
+
+      <p class="face-status" id="faceStatus">Starting camera...</p>
+
+      <div class="face-actions" id="faceActions" hidden>
+        <button type="button" class="face-retake-btn" id="faceRetakeBtn">Retake</button>
+        <button type="button" class="face-confirm-btn" id="faceConfirmBtn">Confirm</button>
+      </div>
+
+      <button type="button" class="face-cancel-btn" id="faceCancelBtn">Cancel</button>
+    </div>
+  </div>
 
   <footer class="footer">
     <p>&copy; 2026 Tau Gamma Phi Fraternity. All rights reserved.</p>
   </footer>
 
   <script src="main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script defer src="attendance.js"></script>
 </body>
 </html>
