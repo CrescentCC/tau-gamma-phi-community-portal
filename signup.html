@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Tau Gamma Phi Community Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="auth-header">
+    <img src="assets/logo.png" class="logo">
+    <div class="brand-text">
+      <span class="brand-title-dark">TAU GAMMA PHI</span>
+      <span class="brand-subtitle-dark">Conception Chapter</span>
+    </div>
+  </header>
+
+  <section class="auth-page">
+    <div class="step-dots">
+      <span class="step-dot active" data-dot="1"></span>
+      <span class="step-dot" data-dot="2"></span>
+      <span class="step-dot" data-dot="3"></span>
+      <span class="step-dot" data-dot="4"></span>
+    </div>
+
+    <form class="auth-form" id="signupForm" novalidate>
+
+      <div class="signup-step active" data-step="1">
+        <h1 class="auth-title">Create a new account</h1>
+        <input type="text" class="auth-input" id="firstName" placeholder="First name" required>
+        <input type="text" class="auth-input" id="lastName" placeholder="Last name" required>
+        <button type="button" class="auth-submit-btn step-next-btn" data-next="2">Next</button>
+      </div>
+
+      <div class="signup-step" data-step="2">
+        <h1 class="auth-title">Basic Information</h1>
+        <div class="dob-row">
+          <select class="auth-input dob-input" id="birthMonth" required>
+            <option value="" selected disabled>Month</option>
+          </select>
+          <select class="auth-input dob-input" id="birthDay" required>
+            <option value="" selected disabled>Day</option>
+          </select>
+          <select class="auth-input dob-input" id="birthYear" required>
+            <option value="" selected disabled>Year</option>
+          </select>
+        </div>
+        <select class="auth-input" id="gender" required>
+          <option value="" selected disabled>Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+        <button type="button" class="auth-submit-btn step-next-btn" data-next="3">Next</button>
+        <a href="#" class="step-back-link" data-back="1">&larr; Back</a>
+      </div>
+
+      <div class="signup-step" data-step="3">
+        <h1 class="auth-title">Enter your username</h1>
+        <input type="text" class="auth-input" id="signupUsername" placeholder="Create username" required>
+        <p class="auth-error" id="usernameError" hidden></p>
+        <button type="button" class="auth-submit-btn step-next-btn" data-next="4">Next</button>
+        <a href="#" class="step-back-link" data-back="2">&larr; Back</a>
+      </div>
+
+      <div class="signup-step" data-step="4">
+        <h1 class="auth-title">Enter your password</h1>
+        <input type="password" class="auth-input" id="signupPassword" placeholder="Create password" required>
+        <input type="password" class="auth-input" id="confirmPassword" placeholder="Confirm password" required>
+        <p class="auth-error" id="passwordError" hidden></p>
+        <button type="submit" class="auth-submit-btn">Confirm</button>
+        <a href="#" class="step-back-link" data-back="3">&larr; Back</a>
+      </div>
+
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Tau Gamma Phi Conception Chapter</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script defer src="signup.js"></script>
+</body>
+</html>

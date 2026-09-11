@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Tau Gamma Phi Community Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="auth.js"></script>
+  <script>
+    (function () {
+      var session = getSession();
+      if (!session || session.role !== "admin") {
+        window.location.replace("login.html");
+      }
+    })();
+  </script>
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-brand">
+        <img src="assets/logo.png" class="logo">
+        <span class="admin-brand-text">TGP PORTAL</span>
+      </div>
+
+      <nav class="admin-nav">
+        <a href="admin.html" class="admin-nav-link active">
+          <i class="fa-solid fa-house"></i> Dashboard
+        </a>
+        <a href="admin-announcements.html" class="admin-nav-link">
+          <i class="fa-solid fa-pen"></i> Publish Announcement
+        </a>
+        <a href="admin-events.html" class="admin-nav-link">
+          <i class="fa-regular fa-calendar-check"></i> Event Management
+        </a>
+        <a href="admin-attendance.html" class="admin-nav-link">
+          <i class="fa-solid fa-tablet-screen-button"></i> Attendance Monitoring
+        </a>
+        <button type="button" class="admin-nav-link admin-logout-link" id="adminLogoutBtn">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+      </nav>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button type="button" class="admin-hamburger" id="adminHamburgerBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="admin-user">
+          <span id="adminUsernameLabel">Admin</span>
+          <div class="admin-user-icon"><i class="fa-solid fa-user"></i></div>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <h1 class="admin-page-title">DASHBOARD OVERVIEW</h1>
+
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Total Events</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Upcoming Events</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="stat-number" id="totalMembersStat">0</span>
+            <span class="stat-label">Total Members</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="stat-number">5</span>
+            <span class="stat-label">New Announcements</span>
+          </div>
+        </div>
+
+        <div class="admin-panels-grid">
+          <div class="admin-panel">
+            <h2 class="admin-panel-title">Recent Announcements</h2>
+            <p class="admin-panel-empty">No announcements yet.</p>
+          </div>
+          <div class="admin-panel">
+            <h2 class="admin-panel-title">Upcoming Events</h2>
+            <p class="admin-panel-empty">No upcoming events yet.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="admin-overlay" id="adminOverlay" hidden></div>
+
+  <script defer src="admin.js"></script>
+</body>
+</html>
