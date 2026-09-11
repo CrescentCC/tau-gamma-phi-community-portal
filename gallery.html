@@ -53,9 +53,36 @@
     </nav>
   </header>
 
-  <section class="coming-soon">
-    <h2 class="coming-soon-title">Gallery</h2>
-    <p class="coming-soon-text">This page is part of the next phase.</p>
+  <section class="gallery-page">
+    <h1 class="section-title">GALLERY</h1>
+
+    <div class="gallery-filters">
+      <button type="button" class="filter-btn active" data-filter="all">ALL</button>
+      <button type="button" class="filter-btn" data-filter="events">EVENTS</button>
+      <button type="button" class="filter-btn" data-filter="programs">PROGRAMS</button>
+      <button type="button" class="filter-btn" data-filter="activities">ACTIVITIES</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" data-category="activities">
+        <img src="assets/landing-page.jpg" alt="Gallery photo">
+      </div>
+      <div class="gallery-item" data-category="events">
+        <img src="assets/event-photo.jpg" alt="Gallery photo">
+      </div>
+      <div class="gallery-item" data-category="programs">
+        <img src="assets/Program-1.jpg" alt="Gallery photo">
+      </div>
+      <div class="gallery-item" data-category="programs">
+        <img src="assets/Program-2.jpg" alt="Gallery photo">
+      </div>
+      <div class="gallery-item" data-category="events">
+        <img src="assets/Program-3.jpg" alt="Gallery photo">
+      </div>
+      <div class="gallery-item" data-category="activities">
+        <img src="assets/Program-4.jpg" alt="Gallery photo">
+      </div>
+    </div>
   </section>
 
   <footer class="footer">
@@ -63,5 +90,6 @@
   </footer>
 
   <script src="main.js"></script>
+  <script defer src="gallery.js"></script>
 </body>
 </html>
