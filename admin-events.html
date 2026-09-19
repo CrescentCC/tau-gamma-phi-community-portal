@@ -41,6 +41,9 @@
         <a href="admin-events.html" class="admin-nav-link active">
           <i class="fa-regular fa-calendar-check"></i> Event Management
         </a>
+        <a href="admin-gallery.html" class="admin-nav-link">
+          <i class="fa-solid fa-images"></i> Gallery Management
+        </a>
         <a href="admin-attendance.html" class="admin-nav-link">
           <i class="fa-solid fa-tablet-screen-button"></i> Attendance Monitoring
         </a>
@@ -63,14 +66,63 @@
       </header>
 
       <main class="admin-content">
-        <h1 class="admin-page-title">EVENT MANAGEMENT</h1>
-        <p class="admin-placeholder-text">This section is part of the next phase.</p>
+        <div class="admin-page-header">
+          <h1 class="admin-page-title">EVENT MANAGEMENT</h1>
+          <button type="button" class="admin-primary-btn" id="addEventBtn">+ Add Event</button>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Event Title</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="eventsTableBody"></tbody>
+          </table>
+        </div>
       </main>
     </div>
   </div>
 
   <div class="admin-overlay" id="adminOverlay" hidden></div>
 
+  <div class="admin-modal" id="eventModal" hidden>
+    <div class="admin-modal-content">
+      <h2 class="admin-modal-title" id="eventModalTitle">Add Event</h2>
+
+      <form id="eventForm">
+        <input type="text" class="admin-input" id="eventTitleInput" placeholder="Event title" required>
+        <input type="date" class="admin-input" id="eventDateInput" required>
+        <select class="admin-input" id="eventStatusInput" required>
+          <option value="Upcoming">Upcoming</option>
+          <option value="Ongoing">Ongoing</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <div class="announcement-photo-row">
+          <div class="announcement-photo-preview" id="eventPhotoPreview">
+            <span>No image selected</span>
+          </div>
+          <label class="admin-secondary-btn">
+            Upload Photo
+            <input type="file" accept="image/*" id="eventPhotoInput" hidden>
+          </label>
+        </div>
+
+        <div class="admin-modal-actions">
+          <button type="button" class="admin-secondary-btn" id="cancelEventBtn">Cancel</button>
+          <button type="submit" class="admin-primary-btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin-data.js"></script>
   <script defer src="admin.js"></script>
+  <script defer src="admin-events.js"></script>
 </body>
 </html>
