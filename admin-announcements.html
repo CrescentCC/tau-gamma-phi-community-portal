@@ -41,6 +41,9 @@
         <a href="admin-events.html" class="admin-nav-link">
           <i class="fa-regular fa-calendar-check"></i> Event Management
         </a>
+        <a href="admin-gallery.html" class="admin-nav-link">
+          <i class="fa-solid fa-images"></i> Gallery Management
+        </a>
         <a href="admin-attendance.html" class="admin-nav-link">
           <i class="fa-solid fa-tablet-screen-button"></i> Attendance Monitoring
         </a>
@@ -64,13 +67,34 @@
 
       <main class="admin-content">
         <h1 class="admin-page-title">PUBLISH ANNOUNCEMENT</h1>
-        <p class="admin-placeholder-text">This section is part of the next phase.</p>
+
+        <div class="announcement-layout">
+          <form class="announcement-form" id="announcementForm">
+            <input type="text" class="admin-input" id="announcementTitle" placeholder="Title" required>
+            <textarea class="admin-input announcement-textarea" id="announcementContents" placeholder="Contents" required></textarea>
+
+            <p class="auth-success" id="announcementSuccess" hidden>Announcement published.</p>
+
+            <div class="announcement-form-actions">
+              <button type="submit" class="admin-primary-btn" id="announcementSubmitBtn">Publish</button>
+              <button type="button" class="admin-secondary-btn" id="cancelEditAnnouncementBtn" hidden>Cancel</button>
+            </div>
+          </form>
+
+          <div class="admin-panel admin-list-panel">
+            <h2 class="admin-panel-title">Manage Announcements</h2>
+            <div id="announcementList"></div>
+          </div>
+        </div>
       </main>
     </div>
   </div>
 
   <div class="admin-overlay" id="adminOverlay" hidden></div>
 
+  <script src="admin-data.js"></script>
   <script defer src="admin.js"></script>
+  <script defer src="admin-announcements.js"></script>
 </body>
 </html>
+
