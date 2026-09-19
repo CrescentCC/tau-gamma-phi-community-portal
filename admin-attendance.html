@@ -41,6 +41,9 @@
         <a href="admin-events.html" class="admin-nav-link">
           <i class="fa-regular fa-calendar-check"></i> Event Management
         </a>
+        <a href="admin-gallery.html" class="admin-nav-link">
+          <i class="fa-solid fa-images"></i> Gallery Management
+        </a>
         <a href="admin-attendance.html" class="admin-nav-link active">
           <i class="fa-solid fa-tablet-screen-button"></i> Attendance Monitoring
         </a>
@@ -64,13 +67,50 @@
 
       <main class="admin-content">
         <h1 class="admin-page-title">ATTENDANCE MONITORING</h1>
-        <p class="admin-placeholder-text">This section is part of the next phase.</p>
+
+        <div class="select-wrapper attendance-event-select-wrap">
+          <select class="event-select" id="attendanceEventSelect">
+            <option value="" selected disabled>-- Select Event --</option>
+          </select>
+        </div>
+
+        <div class="admin-stats-grid attendance-stats-grid">
+          <div class="admin-stat-card">
+            <span class="stat-number" id="attTotalMembers">0</span>
+            <span class="stat-label">Total Members</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="stat-number" id="attPresent">0</span>
+            <span class="stat-label">Present</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="stat-number" id="attAbsent">0</span>
+            <span class="stat-label">Absent</span>
+          </div>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="attendanceTableBody">
+              <tr><td colspan="3" class="admin-table-empty">Select an event to view attendance.</td></tr>
+            </tbody>
+          </table>
+        </div>
       </main>
     </div>
   </div>
 
   <div class="admin-overlay" id="adminOverlay" hidden></div>
 
+  <script src="admin-data.js"></script>
   <script defer src="admin.js"></script>
+  <script defer src="admin-attendance.js"></script>
 </body>
 </html>
