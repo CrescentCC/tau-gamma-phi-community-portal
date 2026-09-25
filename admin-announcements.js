@@ -106,7 +106,3 @@ announcementForm.addEventListener("submit", (e) => {
 });
 
 renderAnnouncements();
-  renderAnnouncements();
-});
-
-renderAnnouncements();
