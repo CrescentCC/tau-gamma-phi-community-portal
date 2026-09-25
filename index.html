@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tau Gamma Phi Community Portal</title>
+  <title>Login | Tau Gamma Phi Community Portal</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,223 +14,35 @@
 </head>
 <body>
 
-  <header class="navbar" id="navbar">
-    <div class="navbar-top">
-      <div class="navbar-brand">
-        <img src="assets/logo.png" class="logo">
-        <div class="brand-text">
-          <span class="brand-title">Tau Gamma Phi</span>
-          <span class="brand-subtitle">Conception Chapter</span>
-        </div>
-      </div>
-
-      <div class="navbar-actions">
-        <a href="support.html" class="support-btn support-btn-mobile">Support us</a>
-        <a href="support.html" class="support-btn support-btn-desktop">Support us</a>
-
-        <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+  <header class="auth-header">
+    <img src="tau-gamma-phi-community-portal/assets/logo.png" class="logo">
+    <div class="brand-text">
+      <span class="brand-title-dark">TAU GAMMA PHI</span>
+      <span class="brand-subtitle-dark">Conception Chapter</span>
     </div>
-
-    <nav class="nav-dropdown" id="navLinks">
-      <div class="nav-links-grid">
-        <a href="#home">Home</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="#about">About us</a>
-        <a href="#programs">Programs</a>
-        <a href="#events">Events</a>
-        <a href="#announcements">Announcements</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="#contact">Contact us</a>
-        <a href="profile.html" class="nav-link-full">Profile</a>
-      </div>
-
-      <button class="nav-toggle-chevron" id="chevronBtn" aria-label="Close navigation">
-        <i class="fa-solid fa-chevron-up"></i>
-      </button>
-    </nav>
   </header>
 
-  <section class="hero" id="home">
-    <img src="assets/landing-page.jpg" alt="Tau Gamma Phi community group photo" class="hero-img">
-  </section>
+  <section class="auth-page">
+    <form class="auth-form" id="loginForm">
+      <input type="text" class="auth-input" id="loginUsername" placeholder="Username" required>
+      <input type="password" class="auth-input" id="loginPassword" placeholder="Password" required>
 
-  <section class="programs" id="programs">
-    <h2 class="section-title">OUR PROGRAM</h2>
+      <a href="retrieve-password.html" class="forgot-password-link">Forgot Password?</a>
 
-    <div class="program-grid">
-      <div class="program-card">
-        <img src="assets/program-1.jpg" alt="Program poster 1">
-      </div>
-      <div class="program-card">
-        <img src="assets/program-2.jpg" alt="Program poster 2">
-      </div>
-      <div class="program-card">
-        <img src="assets/program-3.jpg" alt="Program poster 3">
-      </div>
-      <div class="program-card">
-        <img src="assets/program-4.jpg" alt="Program poster 4">
-      </div>
-      <div class="program-card">
-        <img src="assets/program-5.jpg" alt="Program poster 5">
-      </div>
-    </div>
-  </section>
+      <p class="auth-success" id="loginSuccess" hidden>Account created! Please log in.</p>
+      <p class="auth-error" id="loginError" hidden></p>
 
-  <section class="events" id="events">
-    <h2 class="section-title">UPCOMING EVENTS</h2>
+      <button type="submit" class="auth-submit-btn">LOG IN</button>
 
-    <div class="event-card">
-      <img src="assets/event-photo.jpg" alt="Upcoming event photo" class="event-img">
-
-      <div class="event-info">
-        <h3 class="event-title">Community Outreach Program</h3>
-      </div>
-
-      <div class="event-date">
-        <span class="event-month">September</span>
-        <span class="event-day">26</span>
-        <span class="event-year">2026</span>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img src="assets/event-photo.jpg" alt="Upcoming event photo" class="event-img">
-
-      <div class="event-info">
-        <h3 class="event-title">Event Title Here</h3>
-      </div>
-
-      <div class="event-date">
-        <span class="event-month">Month</span>
-        <span class="event-day">00</span>
-        <span class="event-year">2026</span>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img src="assets/event-photo.jpg" alt="Upcoming event photo" class="event-img">
-
-      <div class="event-info">
-        <h3 class="event-title">Event Title Here</h3>
-      </div>
-
-      <div class="event-date">
-        <span class="event-month">Month</span>
-        <span class="event-day">00</span>
-        <span class="event-year">2026</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <h2 class="about-title">ABOUT TAU GAMMA PHI</h2>
-
-    <div class="about-intro">
-      <p class="about-text">The fraternity Tau Gamma Phi is based on the concepts of brotherhood, service, leadership, and community. Its members work to achieve self-improvement through these values while also making a positive contribution to the community.</p>
-      <img src="assets/landing-page.jpg" alt="Tau Gamma Phi members group photo" class="about-img">
-    </div>
-
-    <h3 class="about-subtitle">OUR CHAPTER</h3>
-    <p class="about-text">Tau Gamma Phi – Conception Chapter is a society of Triskelions who uphold brotherhood, service, and self-improvement. Our chapter fosters great camaraderie within our ranks as we engage in various activities geared towards helping the community.</p>
-
-    <h3 class="about-subtitle">OUR MISSION</h3>
-    <p class="about-text">The purpose of our organization is to foster true brotherhood, nurture responsible leaders, and serve our community through action. Our aim is to provide an atmosphere where members will be able to grow, cooperate, and contribute positively to society.</p>
-
-    <div class="about-info">
-      <p><strong>Chapter:</strong> Conception Chapter</p>
-      <p><strong>Organization:</strong> Tau Gamma Phi</p>
-      <p><strong>Location:</strong> Conception, Pampanga, Bulacan</p>
-    </div>
-  </section>
-
-  <section class="announcements" id="announcements">
-    <h2 class="section-title">ANNOUNCEMENTS</h2>
-
-    <div class="announcement-card">
-      <div class="announcement-header">
-        <h3 class="announcement-title">General Membership Meeting</h3>
-        <span class="announcement-date">August 27, 2026</span>
-      </div>
-      <p class="announcement-text">All members of Tau Gamma Phi – Conception Chapter are encouraged to attend our upcoming general membership meeting. Important updates, chapter activities, and upcoming community programs will be discussed.</p>
-    </div>
-
-    <div class="announcement-card">
-      <div class="announcement-header">
-        <h3 class="announcement-title">Community Donation Drive</h3>
-        <span class="announcement-date">September 8, 2026</span>
-      </div>
-      <p class="announcement-text">Our chapter is accepting donations of school supplies, clothing, food, and other essential items for our upcoming community outreach program. Every contribution, big or small, can help make a difference.</p>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2 class="section-title">CONTACT US</h2>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div>
-            <p class="contact-label">Address</p>
-            <p class="contact-value">Conception, Pampanga, Bulacan</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <p class="contact-label">Phone</p>
-            <p class="contact-value">0962 455 3829</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon contact-icon-plain">
-            <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-              <path fill="#4285F4" d="M17.64 9.2045c0-.6381-.0573-1.2518-.1636-1.8409H9v3.4814h4.8436c-.2086 1.125-.8427 2.0782-1.7959 2.7164v2.2581h2.9087c1.7018-1.5668 2.6836-3.874 2.6836-6.615z"/>
-              <path fill="#34A853" d="M9 18c2.43 0 4.4673-.806 5.9564-2.1805l-2.9087-2.2581c-.8059.54-1.8368.8591-3.0477.8591-2.344 0-4.3282-1.5831-5.036-3.7104H.9573v2.3318C2.4382 15.9832 5.4818 18 9 18z"/>
-              <path fill="#FBBC05" d="M3.964 10.71c-.18-.54-.2822-1.1168-.2822-1.71s.1023-1.17.2823-1.71V4.9582H.9573A8.9965 8.9965 0 000 9c0 1.4523.3477 2.8264.9573 4.0418L3.964 10.71z"/>
-              <path fill="#EA4335" d="M9 3.5795c1.3214 0 2.5077.4541 3.4405 1.346l2.5813-2.5814C13.4632.8918 11.426 0 9 0 5.4818 0 2.4382 2.0168.9573 4.9582L3.964 7.29C4.6718 5.1627 6.656 3.5795 9 3.5795z"/>
-            </svg>
-          </div>
-          <div>
-            <p class="contact-label">Email</p>
-            <p class="contact-value">TGPConception@gmail.com</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon contact-icon-plain">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-              <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-          </div>
-          <div>
-            <p class="contact-label">Facebook</p>
-            <p class="contact-value">TGP Conception Community Chapter</p>
-          </div>
-        </div>
-      </div>
-
-      <form class="contact-form">
-        <input type="text" class="contact-input" placeholder="Your Name" required>
-        <input type="email" class="contact-input" placeholder="Your Email" required>
-        <input type="text" class="contact-input" placeholder="Subject">
-        <textarea class="contact-input contact-textarea" placeholder="Message" required></textarea>
-        <button type="submit" class="contact-submit-btn">
-          <i class="fa-solid fa-paper-plane"></i> Send Message
-        </button>
-      </form>
-    </div>
+      <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up</a></p>
+    </form>
   </section>
 
   <footer class="footer">
-    <p>&copy; 2026 Tau Gamma Phi Fraternity. All rights reserved.</p>
+    <p>&copy; 2026 Tau Gamma Phi Conception Chapter</p>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="auth.js"></script>
+  <script defer src="login.js"></script>
 </body>
 </html>
