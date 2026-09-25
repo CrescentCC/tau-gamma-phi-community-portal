@@ -84,5 +84,5 @@ function clearSession() {
 }
 
 function redirectForRole(role) {
-  window.location.href = role === "admin" ? "admin.html" : "index.html";
+  window.location.href = role === "admin" ? "admin.html" : "home.html";
 }
