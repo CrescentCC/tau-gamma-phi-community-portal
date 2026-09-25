@@ -4,6 +4,28 @@ const eventSelect = document.getElementById("eventSelect");
 const timeInBtn = document.getElementById("timeInBtn");
 const timeOutBtn = document.getElementById("timeOutBtn");
 
+function populateEventSelect() {
+  const events = getEvents().filter((e) => e.status !== "Completed");
+
+  if (events.length === 0) {
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = "No events available";
+    opt.disabled = true;
+    eventSelect.appendChild(opt);
+    return;
+  }
+
+  events.forEach((event) => {
+    const opt = document.createElement("option");
+    opt.value = event.id;
+    opt.textContent = `${event.title} - ${formatDateDisplay(event.date)}`;
+    eventSelect.appendChild(opt);
+  });
+}
+
+populateEventSelect();
+
 const faceModal = document.getElementById("faceModal");
 const faceModalTitle = document.getElementById("faceModalTitle");
 const faceVideo = document.getElementById("faceVideo");
