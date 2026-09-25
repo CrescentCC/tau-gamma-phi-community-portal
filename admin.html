@@ -17,7 +17,7 @@
     (function () {
       var session = getSession();
       if (!session || session.role !== "admin") {
-        window.location.replace("login.html");
+        window.location.replace("index.html");
       }
     })();
   </script>
@@ -40,6 +40,9 @@
         </a>
         <a href="admin-events.html" class="admin-nav-link">
           <i class="fa-regular fa-calendar-check"></i> Event Management
+        </a>
+        <a href="admin-gallery.html" class="admin-nav-link">
+          <i class="fa-solid fa-images"></i> Gallery Management
         </a>
         <a href="admin-attendance.html" class="admin-nav-link">
           <i class="fa-solid fa-tablet-screen-button"></i> Attendance Monitoring
@@ -67,11 +70,11 @@
 
         <div class="admin-stats-grid">
           <div class="admin-stat-card">
-            <span class="stat-number">12</span>
+            <span class="stat-number" id="totalEventsStat">0</span>
             <span class="stat-label">Total Events</span>
           </div>
           <div class="admin-stat-card">
-            <span class="stat-number">8</span>
+            <span class="stat-number" id="upcomingEventsStat">0</span>
             <span class="stat-label">Upcoming Events</span>
           </div>
           <div class="admin-stat-card">
@@ -79,7 +82,7 @@
             <span class="stat-label">Total Members</span>
           </div>
           <div class="admin-stat-card">
-            <span class="stat-number">5</span>
+            <span class="stat-number" id="newAnnouncementsStat">0</span>
             <span class="stat-label">New Announcements</span>
           </div>
         </div>
@@ -87,11 +90,15 @@
         <div class="admin-panels-grid">
           <div class="admin-panel">
             <h2 class="admin-panel-title">Recent Announcements</h2>
-            <p class="admin-panel-empty">No announcements yet.</p>
+            <div id="dashboardAnnouncements">
+              <p class="admin-panel-empty">No announcements yet.</p>
+            </div>
           </div>
           <div class="admin-panel">
             <h2 class="admin-panel-title">Upcoming Events</h2>
-            <p class="admin-panel-empty">No upcoming events yet.</p>
+            <div id="dashboardEvents">
+              <p class="admin-panel-empty">No upcoming events yet.</p>
+            </div>
           </div>
         </div>
       </main>
@@ -100,6 +107,7 @@
 
   <div class="admin-overlay" id="adminOverlay" hidden></div>
 
+  <script src="admin-data.js"></script>
   <script defer src="admin.js"></script>
 </body>
 </html>
