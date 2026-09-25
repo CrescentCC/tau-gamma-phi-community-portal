@@ -62,5 +62,5 @@ retrieveForm.addEventListener("submit", (e) => {
 
   newPasswordError.hidden = true;
   updatePassword(matchedUsername, newPassword);
-  window.location.href = "login.html?reset=1";
+  window.location.href = "index.html?reset=1";
 });
