@@ -36,14 +36,14 @@
 
     <nav class="nav-dropdown" id="navLinks">
       <div class="nav-links-grid">
-        <a href="index.html#home">Home</a>
+        <a href="home.html#home">Home</a>
         <a href="attendance.html">Attendance</a>
-        <a href="index.html#about">About us</a>
-        <a href="index.html#programs">Programs</a>
-        <a href="index.html#events">Events</a>
-        <a href="index.html#announcements">Announcements</a>
+        <a href="home.html#about">About us</a>
+        <a href="home.html#programs">Programs</a>
+        <a href="home.html#events">Events</a>
+        <a href="home.html#announcements">Announcements</a>
         <a href="gallery.html">Gallery</a>
-        <a href="index.html#contact">Contact us</a>
+        <a href="home.html#contact">Contact us</a>
         <a href="profile.html" class="nav-link-full">Profile</a>
       </div>
 
@@ -63,33 +63,21 @@
       <button type="button" class="filter-btn" data-filter="activities">ACTIVITIES</button>
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item" data-category="activities">
-        <img src="assets/landing-page.jpg" alt="Gallery photo">
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="assets/event-photo.jpg" alt="Gallery photo">
-      </div>
-      <div class="gallery-item" data-category="programs">
-        <img src="assets/Program-1.jpg" alt="Gallery photo">
-      </div>
-      <div class="gallery-item" data-category="programs">
-        <img src="assets/Program-2.jpg" alt="Gallery photo">
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="assets/Program-3.jpg" alt="Gallery photo">
-      </div>
-      <div class="gallery-item" data-category="activities">
-        <img src="assets/Program-4.jpg" alt="Gallery photo">
-      </div>
-    </div>
+    <div class="gallery-grid" id="galleryContainer"></div>
   </section>
 
   <footer class="footer">
     <p>&copy; 2026 Tau Gamma Phi Fraternity. All rights reserved.</p>
   </footer>
 
+  <div class="lightbox-overlay" id="lightboxOverlay" hidden>
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img src="" alt="" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <script src="admin-data.js"></script>
   <script src="main.js"></script>
   <script defer src="gallery.js"></script>
+  <script defer src="lightbox.js"></script>
 </body>
 </html>
