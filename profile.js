@@ -63,5 +63,5 @@ document.querySelectorAll(".field-edit-icon").forEach((icon) => {
 
 logoutBtn.addEventListener("click", () => {
   if (typeof clearSession === "function") clearSession();
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
