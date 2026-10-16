@@ -25,7 +25,26 @@ function seedAdminAccount() {
   }
 }
 
+function seedDefaultMemberAccount() {
+  const users = getUsers();
+  const exists = users.some((u) => u.username.toLowerCase() === "user");
+
+  if (!exists) {
+    users.push({
+      username: "user",
+      password: "user123",
+      firstName: "Demo",
+      lastName: "User",
+      email: "user@taugammaphi.org",
+      role: "member",
+      createdAt: new Date().toISOString(),
+    });
+    saveUsers(users);
+  }
+}
+
 seedAdminAccount();
+seedDefaultMemberAccount();
 
 function findUser(username) {
   return getUsers().find(
@@ -86,3 +105,4 @@ function clearSession() {
 function redirectForRole(role) {
   window.location.href = role === "admin" ? "admin.html" : "home.html";
 }
+
