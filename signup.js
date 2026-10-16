@@ -42,6 +42,20 @@ function populateDateSelects() {
 
 populateDateSelects();
 
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPhone(phone) {
+  const digits = phone.replace(/\D/g, "");
+  return /^\+?[\d\s()-]+$/.test(phone) && digits.length >= 7 && digits.length <= 15;
+}
+
+function emailExists(email) {
+  const value = email.toLowerCase();
+  return getUsers().some((u) => u.email && u.email.toLowerCase() === value);
+}
+
 function validateStep(stepEl) {
   const fields = stepEl.querySelectorAll("input[required], select[required]");
   for (const field of fields) {
@@ -52,6 +66,29 @@ function validateStep(stepEl) {
   }
 
   if (stepEl.dataset.step === "3") {
+    const email = document.getElementById("signupEmail").value.trim();
+    const phone = document.getElementById("signupPhone").value.trim();
+    const contactError = document.getElementById("contactError");
+
+    if (!isValidEmail(email)) {
+      contactError.textContent = "Please enter a valid email address.";
+      contactError.hidden = false;
+      return false;
+    }
+    if (emailExists(email)) {
+      contactError.textContent = "That email is already registered.";
+      contactError.hidden = false;
+      return false;
+    }
+    if (!isValidPhone(phone)) {
+      contactError.textContent = "Please enter a valid phone number.";
+      contactError.hidden = false;
+      return false;
+    }
+    contactError.hidden = true;
+  }
+
+  if (stepEl.dataset.step === "4") {
     const usernameInput = document.getElementById("signupUsername");
     const usernameError = document.getElementById("usernameError");
 
@@ -84,8 +121,8 @@ document.querySelectorAll(".step-back-link").forEach((link) => {
 signupForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const step4 = document.querySelector('.signup-step[data-step="4"]');
-  if (!validateStep(step4)) return;
+  const step5 = document.querySelector('.signup-step[data-step="5"]');
+  if (!validateStep(step5)) return;
 
   const password = document.getElementById("signupPassword").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
@@ -112,12 +149,17 @@ signupForm.addEventListener("submit", (e) => {
   const birthYear = document.getElementById("birthYear").value;
   const gender = document.getElementById("gender").value;
   const username = document.getElementById("signupUsername").value.trim();
+  const email = document.getElementById("signupEmail").value.trim();
+  const phone = document.getElementById("signupPhone").value.trim();
 
   registerMember({
     username,
     password,
     firstName,
     lastName,
+    email,
+    phone,
+    createdAt: new Date().toISOString(),
     birthDate: `${birthMonth}/${birthDay}/${birthYear}`,
     gender,
   });
