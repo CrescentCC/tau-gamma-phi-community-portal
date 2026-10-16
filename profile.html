@@ -62,58 +62,57 @@
       <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
     </div>
 
-    <h1 class="profile-name">Juan Dela Cruz</h1>
-    <p class="profile-since">Member since March 2026</p>
+    <h1 class="profile-name" id="profileName"></h1>
+    <p class="profile-since" id="profileSince" hidden></p>
 
     <div class="profile-fields">
-      <div class="profile-field">
+      <div class="profile-field" data-field="username">
         <span class="field-label">Username</span>
-        <span class="field-value" data-value="Juan Dela Cruz">Juan Dela Cruz</span>
-        <input type="text" class="field-input" value="Juan Dela Cruz" hidden>
-        <button type="button" class="field-edit-icon"><i class="fa-solid fa-pen-to-square"></i></button>
+        <span class="field-value"></span>
       </div>
 
-      <div class="profile-field">
+      <div class="profile-field" data-field="password">
         <span class="field-label">Password</span>
-        <span class="field-value" data-value="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;">••••••••••••••••</span>
+        <span class="field-value">••••••••••••</span>
         <input type="password" class="field-input" placeholder="Enter new password" hidden>
         <button type="button" class="field-edit-icon"><i class="fa-solid fa-pen-to-square"></i></button>
       </div>
 
-      <div class="profile-field">
+      <div class="profile-field" data-field="email">
         <span class="field-label">Email</span>
-        <span class="field-value" data-value="Juan@gmail.com">Juan@gmail.com</span>
-        <input type="email" class="field-input" value="Juan@gmail.com" hidden>
+        <span class="field-value"></span>
+        <input type="email" class="field-input" hidden>
         <button type="button" class="field-edit-icon"><i class="fa-solid fa-pen-to-square"></i></button>
       </div>
 
-      <div class="profile-field">
+      <div class="profile-field" data-field="phone">
         <span class="field-label">Phone</span>
-        <span class="field-value" data-value="0962952517985">0962952517985</span>
-        <input type="tel" class="field-input" value="0962952517985" hidden>
+        <span class="field-value"></span>
+        <input type="tel" class="field-input" hidden>
         <button type="button" class="field-edit-icon"><i class="fa-solid fa-pen-to-square"></i></button>
       </div>
 
-      <div class="profile-field">
+      <div class="profile-field" data-field="memberId">
         <span class="field-label">Member ID</span>
-        <span class="field-value">000-000-001</span>
+        <span class="field-value"></span>
       </div>
 
-      <div class="profile-field">
+      <div class="profile-field" data-field="birth">
         <span class="field-label">Birth</span>
-        <span class="field-value" data-value="2/10/2005">2/10/2005</span>
-        <input type="text" class="field-input" value="2/10/2005" hidden>
+        <span class="field-value"></span>
+        <input type="text" class="field-input" hidden>
         <button type="button" class="field-edit-icon"><i class="fa-solid fa-pen-to-square"></i></button>
       </div>
 
-      <div class="profile-field">
+      <div class="profile-field" data-field="gender">
         <span class="field-label">Gender</span>
-        <span class="field-value" data-value="Male">Male</span>
-        <input type="text" class="field-input" value="Male" hidden>
+        <span class="field-value"></span>
+        <input type="text" class="field-input" hidden>
         <button type="button" class="field-edit-icon"><i class="fa-solid fa-pen-to-square"></i></button>
       </div>
     </div>
 
+    <p class="auth-error" id="profileError" hidden></p>
     <button type="button" class="logout-btn" id="logoutBtn">Log Out</button>
     <button type="button" class="save-btn" id="saveBtn" hidden>Save</button>
   </section>
